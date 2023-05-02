@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block custom %}
+  <style>
+    /* body { */
+      /* background-color: #00000066; */
+    /* } */
+    /* body:before { */
+    /* } */
+    .card-body{
+      text-align: center;
+      padding-top: 35%;
+      font-family: "Gill Sans Extrabold", sans-serif;
+      font-weight: 300;
+      font-size: x-large;
+    }
+  </style>
+      {% block bodystyle %}
+        <style>
+            .body{
+                background-image: url("http://localhost:8001/assets/image/attest.jpg");
+                background-size: 100%;
+            }
+        </style>
+    {% endblock %}
+{% endblock %}
+
+    {% block body %}
+    <div class="card">
+        <!-- <h5 class="card-header">Attestation</h5> -->
+        <div class="card-body">
+      {{ user.firstname }} {{user.lastname}}
+      {# {{ dump(user) }} #}
+        </div>
+      </div>
+    {% endblock %}
+    

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+   
+<div class="container-fluid">
+    <h2 class="text-center pb-3">La liste conplète des participants</h2>
+    {# {{ dump(participants) }} #}
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Prenom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Statut</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for participant in participants %}
+                <tr>
+                    <th scope="row"></th>
+                    <td>{{participant.firstName}}</td>
+                    <td>{{participant.lastName}}</td>
+                    <td>{{participant.email}}</td>
+                  <td>{% if participant.status == false %}
+                    <span class="badge text-bg-danger">Non télécharger</span>
+                      {% else %}
+                        <span class="badge text-bg-primary">Télécharger</span>   
+                  {% endif %}</td>                 
+                  <td>
+                    {% if participant.status == false %}
+                        <a href="{{ path('certificate', {'id' : participant.id} ) }}" target="_blank" class="btn btn-primary">
+                            <i class="bi bi-download"></i>
+                        </a>
+                    {% endif %}
+                  </td>
+                  </tr>
+            {% endfor %}
+  
+        </tbody>
+      </table>
+</div>
+{% endblock %}

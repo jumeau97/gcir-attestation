@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+
+
+    {% block body %}
+      <nav class="navbar bg-primary" data-bs-theme="dark">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            {# <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Bootstrap" width="30" height="24"> #}
+            GROUPE XPERTPRO
+          </a>
+        </div>
+      </nav>
+    <div class="card">
+        <h5 class="card-header">Formulaire</h5>
+        <div class="card-body">
+            {{ form(form) }}
+        </div>
+      </div>
+    {% endblock %}
+    
